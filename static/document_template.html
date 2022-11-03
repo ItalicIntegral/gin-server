@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="document.css">
+  </head>
+  <body>
+
+    <h1>Grid Layout</h1>
+    <p>This grid layout contains 4 columns and 5 rows:</p>
+    <form action="/upload" method="post" enctype="multipart/form-data" class="grid-container" x-data="{
+      doc:{
+        id:123456,
+        type:'Invoiice',
+        comp:{
+          name:'Italic Integral',
+          add1:'030203 Windermere Rd',
+          add2:'Edmonton, AB J9T3A1',
+          tel:'(819) 727-2246',
+          email:'first.last@mycompany.ca',
+          website:'www.mycompany.ca',
+        },
+
+
+
+
+
+      }, <!-- end of doc object -->
+    }"> <!-- end of form open tag ;) -->
+    
+
+      
+      <div class="header">
+        <h1>
+          <span x-text="doc.type"></span>&nbsp;
+          <span x-text="doc.id"></span>
+        </h1>
+        <!-- <label for="Document.Id">Document Id:</label> -->
+        <input  type="hidden" id="Document.Id" name="Document.Id" x-model="doc.id"><br>
+        <!-- <label for="Document.Type">Document Type:</label> -->
+        <input  type="hidden" id="Document.Type" name="Document.Type" x-model="doc.type"><br>
+      </div>
+      <div class="logo">
+        <h1>
+          <span x-text="doc.comp.name"></span>&nbsp;
+        </h1>
+        <img src="logo.png" alt="My Logo" width="200"><br>
+        <span x-text="doc.comp.website"></span>
+      </div>
+      
+      <div class="company1">
+        <label for="Document.Company.Name">Company Name:</label>
+        <input type="text" id="Document.Company.Name" name="Document.Company.Name" x-model="doc.comp.name"><br>
+        <label for="Document.Company.Address1">Address 1:</label>
+        <input type="text" id="Document.Company.Address1" name="Document.Company.Address1" x-model="doc.comp.add1"><br>
+        <label for="Document.Company.Address2">Address 2:</label>
+        <input type="text" id="Document.Company.Address2" name="Document.Company.Address2" x-model="doc.comp.add2"><br>
+        
+      </div>
+      <div class="company2">
+        <label for="Document.Company.Phone">Phone:</label>
+        <input type="text" id="Document.Company.Phone" name="Document.Company.Phone" x-model="doc.comp.tel"><br>
+        <label for="Document.Company.Email">Email:</label>
+        <input type="email" id="Document.Company.Email" name="Document.Company.Email" x-model="doc.comp.email"><br>
+        <label for="Document.Company.Website">Website:</label>
+        <input type="text" id="Document.Company.Website" name="Document.Company.Website" x-model="doc.comp.website"><br>
+
+      </div>
+      <div class="bill_to">Bill To</div>
+      <div class="ship_to">Ship To</div>
+      <div class="doc_info1">Document Info 1</div>
+      <div class="doc_info2">Document Info 2</div>
+      <div class="doc_details">Document Details</div>
+      <div class="message">Message</div>
+      <div class="total">Total</div>
+      <div class="footer">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+    
+  </body>
+  </html>

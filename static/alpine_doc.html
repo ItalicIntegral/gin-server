@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- https://alpinejs.dev/ -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{
+        id: 12,
+        doc:{
+            number:123456,
+            date:'2022-08-01',
+            terms:'Net 30',
+            due:'2022-08-31',
+            comp:{
+                name:'Italic Integral Inc',
+                address1:'1234 Rogue Ave',
+                address2:'Edmonton, AB, T4N 5Z2',
+                email:'company_email@email.com',
+                website:'www.mycompany.com',
+                tel:'(587) 589-7233'
+            },
+            cust:{
+                name:'Garaga Doors Inc',
+                address1:'5524 Rogue Ave',
+                address2:'Calgary, AB, T4N 5Z2',
+                email:'company_email@garaga.com',
+                website:'www.garaga.com',
+                tel:'(587) 789-5485'
+            },
+            
+        }
+    }">
+        <h1>Invoice</h1>
+
+        <!-- Company Information -->
+        <table>
+            <tr>
+                <td><strong x-text="doc.comp.name"></strong></td>
+                <td x-text="doc.comp.tel"></td>
+            </tr>
+            <tr>
+                <td x-text="doc.comp.address1"></td>
+                <td x-text="doc.comp.email"></td>
+            </tr>
+            <tr>
+                <td x-text="doc.comp.address2"></td>
+                <td x-text="doc.comp.website"></td>
+            </tr>
+        </table>
+
+        <!-- Customer Information -->
+        <h3>Bill To</h3>
+        <table>
+            <tr>
+                <td><strong x-text="doc.cust.name"></strong></td>
+                <td x-text="doc.cust.tel"></td>
+            </tr>
+            <tr>
+                <td x-text="doc.cust.address1"></td>
+                <td x-text="doc.cust.email"></td>
+            </tr>
+            <tr>
+                <td x-text="doc.cust.address2"></td>
+                <td x-text="doc.cust.website"></td>
+            </tr>
+        </table>
+        
+        <!-- Invoice Details -->
+        <br><br>
+        <table>
+            <tr>
+                <th>Product/Service</th>
+                <th>Description</th>
+                <th>Qty/Hrs</th>
+                <th>Rate</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>123456</td>
+                <td>My produce is the best</td>
+                <td>10</td>
+                <td>$1.95</td>
+                <td>$19.50</td>
+            </tr>
+        </table>
+
+        <br><br><br><br><br>
+    </div>
+
+
+    <!-- Examples -->
+    <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+    <div x-data="{ count: 0 }">
+        <button x-on:click="count++">Increment</button>
+     
+        <span x-text="count"></span>
+    </div>
+    <div x-data="{ open: false }">
+        <button @click="open = ! open">Toggle</button>
+     
+        <div x-show="open" @click.outside="open = false">Contents...</div>
+    </div>
+    <div
+    x-data="{
+        search: '',
+ 
+        items: ['foo', 'bar', 'baz'],
+ 
+        get filteredItems() {
+            return this.items.filter(
+                i => i.startsWith(this.search)
+            )
+        }
+    }"
+    >
+    <input x-model="search" placeholder="Search...">
+ 
+    <ul>
+        <template x-for="item in filteredItems" :key="item">
+            <li x-text="item"></li>
+        </template>
+    </ul>
+    </div>
+</body>
+</html>

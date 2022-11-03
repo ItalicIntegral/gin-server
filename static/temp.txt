@@ -1,0 +1,46 @@
+doc:{
+        id:123456,
+        type:'Invoiice',
+        create_date:'1980-04-18',
+        terms:'Net 30',
+        due:'2099-08-26',
+        comp:{
+          name:'Italic Integral',
+          add1:'20030203 Windermere Chemin Rivest',
+          add2:'Edmonton, BC, J9T 3A1',
+          tel:'(819) 727-2246'
+          website:'www.mycompany.ca',
+          email:'first.last@mycompany.ca'
+        },
+        cust:{
+          id:27,
+          name:'Some Great Customer',
+          address1:'5524 Rogue Ave',
+          address2:'Cranbrook, BC, ??? ???',
+          email:'accountsreceivable@somecustomer.com',
+          website:'www.somecustomer.com',
+          tel:'(111) 222-3333'
+        },
+      }
+
+
+
+<div class="company0">
+        <!-- Company 1 -->
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id" x-model="doc.comp.id"><br>
+        <!-- <label for="comp_name">Company Name:</label>
+        <input type="text" id="comp_name" name="comp_name" x-model="doc.comp.name"><br>
+        <label for="comp_add1">comp_add1</label>
+        <input type="text" id="comp_add1" name="comp_add1" x-model="doc.comp.add1"><br>
+        <label for="comp_add2">comp_add2</label>
+        <input type="text" id="comp_add2" name="comp_add2" x-model="doc.comp.add2"><br> -->
+
+
+
+
+
+        <!-- <label for="nme">nme</label>
+        <input type="text" id="nme" name="nme" x-model="doc.comp.nme"><br> -->
+
+      </div>

@@ -1,0 +1,41 @@
+/*
+2022-08-26
+renamed document.css and archive
+*/
+
+
+
+.header { grid-area: header; }
+.logo { grid-area: logo; }
+.company1 { grid-area: company1; }
+.company2 { grid-area: company2; }
+.doc_info1 { grid-area: doc_info1; }
+.doc_info2 { grid-area: doc_info2; }
+.doc_details { grid-area: doc_details; }
+.message { grid-area: message; }
+.total { grid-area: total; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header logo logo'
+    'company1 company2 logo logo'
+    'bill_to ship_to doc_info1 doc_info2'
+    'doc_details doc_details doc_details doc_details'
+    'message message total total'
+    ;
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
